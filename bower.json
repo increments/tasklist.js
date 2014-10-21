@@ -1,0 +1,21 @@
+{
+  "name": "tasklist",
+  "version": "0.0.1",
+  "authors": [
+    "Ryo Nakamura <r7kamura@gmail.com>"
+  ],
+  "description": "Convert tasklist in Markdown.",
+  "main": "src/tasklist.js",
+  "keywords": [
+    "tasklist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/r7kamura/tasklist.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
