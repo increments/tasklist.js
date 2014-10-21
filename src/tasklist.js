@@ -10,8 +10,18 @@
   // then returns converted Markdown text.
   //
   // ```js
-  // tasklist.convert('- [ ]\n- [ ]\n', 2, true) //=> '- [ ]\n- [x]\n'
-  // ```
+  // tasklist.convert(
+  //   '- [ ] foo\n' +
+  //   '- [ ] bar\n' +
+  //   '- [ ] baz',
+  //   2,
+  //   true
+  // )
+  // // results in:
+  // // - [ ] foo
+  // // - [x] bar
+  // // - [ ] baz
+  //
   tasklist.convert = function (markdownText, checkboxIndex, isChecked) {
     var lines = markdownText.split('\n');
     var taskIndex = 0;
