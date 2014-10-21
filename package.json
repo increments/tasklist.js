@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:r7kamura/tasklist.js.git"
+    "url": "git@github.com:increments/tasklist.js.git"
   },
   "keywords": [
     "tasklist"
@@ -16,7 +16,12 @@
   "author": "Ryo Nakamura",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/r7kamura/tasklist.js/issues"
+    "url": "https://github.com/increments/tasklist.js/issues"
   },
-  "homepage": "https://github.com/r7kamura/tasklist.js"
+  "homepage": "https://github.com/increments/tasklist.js",
+  "devDependencies": {
+    "jshint": "2.5.4",
+    "mocha": "1.21.4",
+    "uglify-js": "2.4.15"
+  }
 }
