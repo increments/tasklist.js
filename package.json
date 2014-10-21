@@ -1,0 +1,22 @@
+{
+  "name": "tasklist.js",
+  "version": "0.0.1",
+  "description": "Convert tasklist in Markdown.",
+  "main": "src/tasklist.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:r7kamura/tasklist.js.git"
+  },
+  "keywords": [
+    "tasklist"
+  ],
+  "author": "Ryo Nakamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r7kamura/tasklist.js/issues"
+  },
+  "homepage": "https://github.com/r7kamura/tasklist.js"
+}
