@@ -94,5 +94,34 @@ describe('tasklist', function () {
         );
       });
     });
+
+    context('with code block and same lines', function () {
+      it('ignores tasklist in code block', function () {
+        assert.equal(
+          tasklist.convert(
+            '```\n' +
+            '- [ ] a\n' +
+            '- [ ] b\n' +
+            '- [ ] c\n' +
+            '```\n' +
+            '\n' +
+            '- [ ] a\n' +
+            '- [ ] b\n' +
+            '- [ ] c\n',
+            2,
+            true
+          ),
+          '```\n' +
+          '- [ ] a\n' +
+          '- [ ] b\n' +
+          '- [ ] c\n' +
+          '```\n' +
+          '\n' +
+          '- [ ] a\n' +
+          '- [x] b\n' +
+          '- [ ] c\n'
+        );
+      });
+    });
   });
 });
