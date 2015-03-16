@@ -48,6 +48,19 @@ describe('tasklist', function () {
       });
     });
 
+    context('with tasklist starting with parentheses', function () {
+      it('treats it as tasklist', function () {
+        assert.equal(
+          tasklist.convert(
+            '- [ ] (a) b',
+            1,
+            true
+          ),
+          '- [x] (a) b'
+        );
+      });
+    });
+
     context('with code block', function () {
       it('ignores tasklist in code block', function () {
         assert.equal(
