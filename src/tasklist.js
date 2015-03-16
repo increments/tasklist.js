@@ -3,7 +3,7 @@
 
   tasklist.codeBlockPattern = /^(`{3}(?:.+)?\n)([\S\s]*?)(\n`{3})$/gm;
 
-  tasklist.linePattern = /^(?:\s*(?:>\s*)*(?:[-+*]|(?:\d+\.)))\s*(\[ \]|\[x\])\s+(?!\(.*?\))(?=(?:\[.*?\]\s*(?:\[.*?\]|\(.*?\))\s*)*(?:[^\[]|$))/;
+  tasklist.linePattern = /^(?:\s*(?:>\s*)*(?:[-+*]|(?:\d+\.)))\s*(\[ \]|\[x\])\s+(?=(?:\[.*?\]\s*(?:\[.*?\]|\(.*?\))\s*)*(?:[^\[]|$))/;
 
   // ## tasklist.convert(String, Integer, Boolean)
   // Takes Markdown text, checkbox index that starts from 1, and checked flag,

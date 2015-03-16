@@ -1,6 +1,6 @@
 {
   "name": "tasklist.js",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Convert tasklist in Markdown.",
   "main": "src/tasklist.js",
   "scripts": {

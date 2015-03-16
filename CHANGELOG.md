@@ -1,3 +1,6 @@
+## v0.0.4
+- Fix bug on tasklist that starts from parentheses (Thx @mizchi)
+
 ## v0.0.3
 - Update dist
 
