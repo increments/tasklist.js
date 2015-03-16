@@ -21,7 +21,7 @@
   // // - [ ] foo
   // // - [x] bar
   // // - [ ] baz
-  //
+  // ```
   tasklist.convert = function (markdownText, checkboxIndex, isChecked) {
     var lines = markdownText.split('\n');
     var taskIndex = 0;
