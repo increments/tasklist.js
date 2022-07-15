@@ -123,5 +123,34 @@ describe('tasklist', function () {
         );
       });
     });
+
+    context('with comment out and same lines', function () {
+      it('ignores tasklist in code block', function () {
+        assert.equal(
+          tasklist.convert(
+            '<!--' +
+            '- [ ] a\n' +
+            '- [ ] b\n' +
+            '- [ ] c\n' +
+            '-->\n' +
+            '\n' +
+            '- [ ] a\n' +
+            '- [ ] b\n' +
+            '- [ ] c\n',
+            2,
+            true
+          ),
+          '<!--' +
+          '- [ ] a\n' +
+          '- [ ] b\n' +
+          '- [ ] c\n' +
+          '-->\n' +
+          '\n' +
+          '- [ ] a\n' +
+          '- [x] b\n' +
+          '- [ ] c\n'
+        );
+      });
+    });
   });
 });

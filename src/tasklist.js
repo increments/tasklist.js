@@ -2,6 +2,7 @@
   var tasklist = {};
 
   tasklist.codeBlockPattern = /^(`{3}(?:.+)?\n)([\S\s]*?)(\n`{3})$/gm;
+  tasklist.commentPattern = /^([\s]*<!--)([\S\s]*?)(-->[^\n]*)$/gm;
 
   tasklist.linePattern = /^(?:\s*(?:>\s*)*(?:[-+*]|(?:\d+\.)))\s*(\[ \]|\[x\])\s+(?!\(.*?\))(?=(?:\[.*?\]\s*(?:\[.*?\]|\(.*?\))\s*)*(?:[^\[]|$))/;
 
@@ -25,8 +26,15 @@
   tasklist.convert = function (markdownText, checkboxIndex, isChecked) {
     var lines = markdownText.split('\n');
     var taskIndex = 0;
-    var sanitizedLines = markdownText.replace(
+    var codeBlockSanitizedLines = markdownText.replace(
       tasklist.codeBlockPattern,
+      function (str, pattern1, pattern2, pattern3) {
+        return pattern1 + pattern2.replace(/^/gm, 'SANITIZED') + pattern3;
+      }
+    ).split('\n');
+
+    var commentSanitizedLines = markdownText.replace(
+      tasklist.commentPattern,
       function (str, pattern1, pattern2, pattern3) {
         return pattern1 + pattern2.replace(/^/gm, 'SANITIZED') + pattern3;
       }
@@ -35,7 +43,7 @@
     var line;
     for (var i = 0, length = lines.length; i < length; i++) {
       line = lines[i];
-      if (line === sanitizedLines[i] && line.match(tasklist.linePattern)) {
+      if (line === codeBlockSanitizedLines[i] && line === commentSanitizedLines[i] && line.match(tasklist.linePattern)) {
         taskIndex++;
         if (taskIndex === checkboxIndex) {
           if (isChecked) {
