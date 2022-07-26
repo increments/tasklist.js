@@ -1,3 +1,6 @@
+## v0.0.4
+- Fix bug with tasklist in comment-out
+
 ## v0.0.3
 - Update dist
 
