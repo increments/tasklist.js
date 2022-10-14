@@ -48,6 +48,37 @@ describe('tasklist', function () {
       });
     });
 
+    context('with list of links', function () {
+      it('does not confuse the links with checkboxes', function () {
+        assert.equal(
+          tasklist.convert(
+            '- [x](/inline/link)\n' +
+            '- [x] (/inline/link)\n' +
+            '- [x][reference-link]\n' +
+            '- [x] [reference-link]\n' +
+            '- [x][]\n' +
+            '- [x] []\n' +
+            '- [x] Checkbox\n' +
+            '\n' +
+            '[reference-link]: http://qiita.com/\n' +
+            '[x]: http://qiita.com/\n',
+            1,
+            false
+          ),
+          '- [x](/inline/link)\n' +
+          '- [x] (/inline/link)\n' +
+          '- [x][reference-link]\n' +
+          '- [x] [reference-link]\n' +
+          '- [x][]\n' +
+          '- [x] []\n' +
+          '- [ ] Checkbox\n' +
+          '\n' +
+          '[reference-link]: http://qiita.com/\n' +
+          '[x]: http://qiita.com/\n'
+        );
+      });
+    });
+
     context('with code block', function () {
       it('ignores tasklist in code block', function () {
         assert.equal(
