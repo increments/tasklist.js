@@ -1,0 +1,5 @@
+# package-ecosystem: github-actions, directories: /
+/.github/workflows @increments/shared-dev-group
+
+# package-ecosystem: npm, directories: /
+/package.json @increments/shared-dev-group
